@@ -14,20 +14,26 @@ const RECORDS_FILE = path.resolve(process.env.RECORDS_FILE || './data/records.js
 
 router.get('/', async (req, res, next) => {
      try {
-          const departments = (await readJSON(DEPTS_FILE)) || [];
-               res.render('index', { departments });
+     const departments = (await readJSON(DEPTS_FILE)) || [];
+     res.render('index', { 
+          departments,
+          title: 'Nuevo Registro'
+     });
      } catch (err) {
-          next(err);
+     next(err);
      }
 });
 
 router.get('/list', async (req, res, next) => {
      try {
-          const records = (await readJSON(RECORDS_FILE)) || [];
-               res.render('list', { records });
-          } catch (err) {
-          next(err);
-          }
+     const records = (await readJSON(RECORDS_FILE)) || [];
+     res.render('list', { 
+          records,
+          title: 'Lista de Registros'
+     });
+     } catch (err) {
+     next(err);
+     }
 });
 
 router.get('/api/municipalities', async (req, res, next) => {
