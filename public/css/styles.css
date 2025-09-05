@@ -1,0 +1,39 @@
+:root{
+     --accent:#2b7a78;
+     --muted:#666;
+     --card-bg:#fff;
+     --max-width:900px;
+}
+
+*{box-sizing:border-box}
+body{
+     font-family: Inter, system-ui, Arial, sans-serif;
+     background:#f5f7fb;
+     color:#222;
+     margin:0;
+     padding:0;
+}
+.site-header{
+     background:var(--accent);
+     color:white;
+     padding:1rem;
+}
+.site-header h1{margin:0;font-size:1.1rem}
+.site-header nav{margin-top:.5rem;font-size:.95rem}
+.container{
+     max-width:var(--max-width);
+     margin:1.25rem auto;
+     padding:0 .75rem;
+}
+.card{background:var(--card-bg);padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.form-card label{display:block;margin-bottom:.75rem}
+.form-card input, .form-card select{width:100%;padding:.5rem;border:1px solid #ddd;border-radius:6px;margin-top:.35rem}
+.actions{margin-top:1rem;text-align:right}
+button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:0;border-radius:6px;cursor:pointer}
+.records-table{width:100%;border-collapse:collapse}
+.records-table th, .records-table td{padding:.5rem;border-bottom:1px solid #eee;text-align:left;font-size:.95rem}
+@media (min-width:700px){
+     .form-card{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+     .form-card label{margin-bottom:0}
+     .form-card .actions{grid-column:1 / -1;text-align:right}
+}

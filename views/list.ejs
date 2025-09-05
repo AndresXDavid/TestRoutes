@@ -1,0 +1,25 @@
+<% layout('layout') -%>
+
+<h2>Registros guardados</h2>
+
+     <% if (!records || records.length === 0) { %>
+     <p>No hay registros aún.</p>
+     <% } else { %>
+     <table class="records-table">
+     <thead>
+          <tr><th>ID</th><th>Nombre</th><th>Fecha</th><th>Departamento</th><th>Municipio</th><th>Creado</th></tr>
+     </thead>
+     <tbody>
+          <% records.forEach(r => { %>
+          <tr>
+               <td><%= r.id %></td>
+               <td><%= r.name %></td>
+               <td><%= r.date %></td>
+               <td><%= r.department %></td>
+               <td><%= r.municipality %></td>
+               <td><%= new Date(r.createdAt).toLocaleString() %></td>
+          </tr>
+          <% }) %>
+     </tbody>
+     </table>
+<% } %>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width,initial-scale=1" />
+     <title><%= title || 'Mi App' %></title>
+     <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+     <header class="site-header">
+     <h1>Registro de objeto (fecha / departamento / municipio)</h1>
+     <nav>
+          <a href="/">Nuevo</a> |
+          <a href="/list">Lista</a>
+     </nav>
+     </header>
+
+     <main class="container">
+          <%- body %>
+     </main>
+
+     <footer class="site-footer">
+          <small>Proyecto ejemplo - NodeJS (ESModules)</small>
+     </footer>
+
+     <script src="/public/js/dependent-selects.js" defer></script>
+</body>
+</html>

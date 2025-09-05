@@ -1,0 +1,34 @@
+<% layout('layout') -%>
+
+<form action="/save" method="post" class="card form-card">
+     <label>
+     Nombre del objeto
+     <input name="name" required maxlength="120" placeholder="ej. Registro 1">
+     </label>
+
+     <label>
+     Fecha
+     <input name="date" type="date" required>
+     </label>
+
+     <label>
+     Departamento
+     <select id="department" name="department" required>
+          <option value="">-- Seleccione departamento --</option>
+          <% departments.forEach(d => { %>
+          <option value="<%= d.code %>"><%= d.name %></option>
+          <% }) %>
+     </select>
+     </label>
+
+     <label>
+     Municipio
+     <select id="municipality" name="municipality" required>
+          <option value="">-- Seleccione municipio --</option>
+     </select>
+     </label>
+
+     <div class="actions">
+     <button type="submit">Guardar</button>
+     </div>
+</form>
